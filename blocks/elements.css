@@ -30,10 +30,15 @@
   overflow: hidden;
 }
 
-.elements__card-like {
-  height: 19px;
+.elements__card-btn {
+  border: none;
+  background-color: transparent;
 }
 
-.elements__card-like:hover {
+.elements__card-btn:hover {
   opacity: 0.6;
+}
+
+.elements__card-like {
+  height: 19px;
 }
