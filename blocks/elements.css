@@ -1,0 +1,35 @@
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  grid-template-rows: repeat(2, 361px);
+  gap: 20px 10px;
+}
+
+.elements__card {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.elements__card-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 15px 31px 21px;
+  align-items: center;
+}
+
+.elements__card-title {
+  color: #000;
+  margin: 0;
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.elements__card-like {
+  height: 19px;
+}
+
+.elements__card-like:hover {
+  opacity: 0.6;
+}
