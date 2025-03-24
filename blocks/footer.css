@@ -14,3 +14,29 @@
   align-items: center;
   margin-bottom: 60px;
 }
+
+@media screen and (max-width: 900px) {
+  .footer {
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+  }
+}
+@media screen and (max-width: 750px) {
+  .footer {
+    max-width: 282px;
+    width: 100%;
+    display: flex;
+  }
+
+  .footer__copy {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #545454;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+}
