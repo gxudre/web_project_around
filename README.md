@@ -32,7 +32,7 @@ A proposta principal do projeto é aprimorar a interação do usuário com a int
 
 ## 🔗 Acesse o Projeto
 
-🔗 [Veja o projeto](sem link por enquanto)
+🔗 [Veja o projeto](https://gxudre.github.io/web_project_around/)
 
 ---
 
