@@ -11,7 +11,187 @@
     <meta name="keywords" content="images, portfolio, web developer" />
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="stylesheet" href="./vendor/fonts.css" />
+    <link rel="stylesheet" href="./vendor/normalize.css" />
     <title>Around</title>
   </head>
-  <body></body>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="./images/logo.svg" alt="around logo" class="header__logo" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <div class="profile__container">
+            <img
+              src="./images/Avatar.png"
+              alt="imagem de perfil"
+              class="profile__image"
+            />
+            <div class="profile__info">
+              <div class="profile__info-container">
+                <h1 class="profile__info-name">Jacques Cousteau</h1>
+                <button class="profile__info-btn">
+                  <img
+                    src="./images/edit-icon.png"
+                    alt="vetor imagem de pincel"
+                    class="profile__btn-image"
+                  />
+                </button>
+              </div>
+              <p class="profile__info-ocupation">Explorador</p>
+            </div>
+          </div>
+          <button class="profile__add-btn">
+            <img
+              src="./images/add-icon.png"
+              alt="vetor imagem button"
+              class="profile__add-image"
+            />
+          </button>
+        </section>
+        <section class="elements">
+          <div class="elements__card">
+            <img
+              src="./images/image-card1.png"
+              alt="primeira imagem do projeto"
+              class="elements__card-image"
+            />
+            <div class="elements__card-container">
+              <h2 class="elements__card-title">Vale de Yosemite</h2>
+              <button class="elements__card-btn">
+                <img
+                  src="./images/like-disabled.png"
+                  alt="vetor de like da postagem fictícia"
+                  class="elements__card-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__card">
+            <img
+              src="./images/image-card2.png"
+              alt="primeira imagem do projeto"
+              class="elements__card-image"
+            />
+            <div class="elements__card-container">
+              <h2 class="elements__card-title">Lago Louise</h2>
+              <button class="elements__card-btn">
+                <img
+                  src="./images/like-disabled.png"
+                  alt="vetor de like da postagem fictícia"
+                  class="elements__card-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__card">
+            <img
+              src="./images/image-card3.png"
+              alt="primeira imagem do projeto"
+              class="elements__card-image"
+            />
+            <div class="elements__card-container">
+              <h2 class="elements__card-title">
+                Montanhas Care eu n sei o resto kkk
+              </h2>
+              <button class="elements__card-btn">
+                <img
+                  src="./images/like-disabled.png"
+                  alt="vetor de like da postagem fictícia"
+                  class="elements__card-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__card">
+            <img
+              src="./images/image-card4.png"
+              alt="primeira imagem do projeto"
+              class="elements__card-image"
+            />
+            <div class="elements__card-container">
+              <h2 class="elements__card-title">Latemar</h2>
+              <button class="elements__card-btn">
+                <img
+                  src="./images/like-disabled.png"
+                  alt="vetor de like da postagem fictícia"
+                  class="elements__card-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__card">
+            <img
+              src="./images/image-card5.png"
+              alt="primeira imagem do projeto"
+              class="elements__card-image"
+            />
+            <div class="elements__card-container">
+              <h2 class="elements__card-title">
+                Parque Nacional de algum lugar
+              </h2>
+              <button class="elements__card-btn">
+                <img
+                  src="./images/like-disabled.png"
+                  alt="vetor de like da postagem fictícia"
+                  class="elements__card-like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__card">
+            <img
+              src="./images/image-card6.png"
+              alt="primeira imagem do projeto"
+              class="elements__card-image"
+            />
+            <div class="elements__card-container">
+              <h2 class="elements__card-title">Lago di Braies</h2>
+              <button class="elements__card-btn">
+                <img
+                  src="./images/like-disabled.png"
+                  alt="vetor de like da postagem fictícia"
+                  class="elements__card-like"
+                />
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copy">Gustavo Xudre © 2024 Around The U.S.</p>
+      </footer>
+    </div>
+    <div class="modal">
+      <div class="modal__btn-container">
+        <button class="modal__btn-sair">
+          <img
+            src="./images/Close-Icon.png"
+            alt="botao sair"
+            class="modal__btn-image"
+          />
+        </button>
+      </div>
+      <div class="modal__popup">
+        <div class="modal__popup-header">
+          <h2 class="modal__popup-tittle">Editar perfil</h2>
+        </div>
+        <form class="modal__form">
+          <input
+            type="text"
+            class="modal__input modal__input-name"
+            placeholder="Jacques Cousteau"
+          />
+          <input
+            type="text"
+            class="modal__input modal__input-ocupation"
+            placeholder="Explorador"
+          />
+          <button class="modal__form-btn modal__btn-salvar">Salvar</button>
+        </form>
+      </div>
+    </div>
+    <script src="./scripts/modal.js"></script>
+    <script src="./scripts/element.js"></script>
+  </body>
 </html>

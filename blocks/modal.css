@@ -1,0 +1,155 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal__active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__btn-container {
+  max-width: 512px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.modal__btn-sair {
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__btn-sair:hover {
+  opacity: 0.6;
+}
+
+.modal__btn-image {
+  width: 40px;
+  height: 40px;
+}
+
+.modal__popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  box-sizing: border-box;
+  max-width: 430px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.modal__popup-header {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 358px;
+  width: 100%;
+}
+
+.modal__popup-tittle {
+  margin: 0 0 54px;
+  text-align: start;
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 358px;
+  width: 100%;
+}
+
+.modal__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #545454;
+  padding-bottom: 13px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.modal__input-name {
+  margin-bottom: 30px;
+}
+
+.modal__input-ocupation {
+  margin-bottom: 48px;
+}
+
+.modal__form-btn {
+  width: 100%;
+  padding: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  border-radius: 2px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal__form-btn:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 430px) {
+  .modal__btn-container {
+    max-width: 320px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .modal__btn-sair {
+    width: 27px;
+    height: 27px;
+    box-sizing: border-box;
+    border: none;
+    color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 14px;
+  }
+
+  .modal__btn-image {
+    width: 25px;
+    height: 25px;
+  }
+
+  .modal__popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+    box-sizing: border-box;
+    max-width: 320px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}
