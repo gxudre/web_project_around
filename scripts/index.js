@@ -37,18 +37,18 @@ closemodalbtn.addEventListener("click", toggleModal);
 // Lógica para alteração de nome e job
 
 //seleciona o form
-let formElement = document.querySelector(".modal__form");
+const formElement = document.querySelector(".modal__form");
 
 const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
 
   //seleciona os inputs
-  let nameInput = formElement.querySelector(".modal__input-name");
-  let jobInput = formElement.querySelector(".modal__input-ocupation");
+  const nameInput = formElement.querySelector(".modal__input-name");
+  const jobInput = formElement.querySelector(".modal__input-ocupation");
 
   //seleciona os textos de nome e job do perfil
-  let profileName = document.querySelector(".profile__info-name");
-  let profileJob = document.querySelector(".profile__info-ocupation");
+  const profileName = document.querySelector(".profile__info-name");
+  const profileJob = document.querySelector(".profile__info-ocupation");
 
   //altera o valor do nome e job no perfil
   profileName.textContent = nameInput.value;
