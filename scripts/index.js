@@ -1,5 +1,157 @@
-//Lógica para a curtida do post
 const elements = document.querySelector(".elements");
+
+//seleciona o form
+const formElement = document.querySelector(".modal__form");
+
+//seleciona os inputs
+const nameInput = formElement.querySelector(".modal__input-name");
+const jobInput = formElement.querySelector(".modal__input-ocupation");
+
+//seleciona os textos de nome e job do perfil
+const profileName = document.querySelector(".profile__info-name");
+const profileJob = document.querySelector(".profile__info-ocupation");
+
+// ------------------------------------------------------------ ALTERAÇÃO DE NOME E JOB ---------------------------------------------------------------------
+
+const handleProfileFormSubmit = (evt) => {
+  evt.preventDefault();
+  //altera o valor do nome e job no perfil
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+
+  //logica para alterar o placeholder para os valores informados
+  nameInput.placeholder = nameInput.value;
+  jobInput.placeholder = jobInput.value;
+
+  //limpa os inputs
+  jobInput.value = "";
+  nameInput.value = "";
+};
+
+// ---------------------------------------------------------- ABRIR E FECHAR O POPUP -------------------------------------------------------------------------
+
+const modalEdit = document.querySelector(".modal__edit-profile"); // Seleciona o modal de edição
+const modalAdd = document.querySelector(".modal__add-card"); // Seleciona o modal de adicionar
+
+const Editbtn = document.querySelector(".profile__info-btn");
+const closemodalbtnEdit = modalEdit.querySelector(".modal__btn-sair"); // Seleciona o botão de fechar do modal de edição
+
+const addBtn = document.querySelector(".profile__add-btn");
+const closemodalbtnAdd = modalAdd.querySelector("#modal-close-add-btn"); // Seleciona o botão de fechar do modal de adicionar
+
+const openModal = (modalElement) => {
+  if (modalElement) {
+    modalElement.classList.add("modal__active");
+  }
+};
+
+const closeModal = (modalElement) => {
+  if (modalElement) {
+    modalElement.classList.remove("modal__active");
+  }
+};
+
+// ----------------------------------------------------------------- LOGICA EDIT BTN ---------------------------------------------------------------------------
+
+Editbtn.addEventListener("click", () => openModal(modalEdit));
+closemodalbtnEdit.addEventListener("click", () => closeModal(modalEdit));
+
+formElement.addEventListener("submit", (evt) => {
+  handleProfileFormSubmit(evt);
+  closeModal(modalEdit);
+});
+
+// ------------------------------------------------------------------- LOGICA ADD BTN -------------------------------------------------------------------------------
+
+addBtn.addEventListener("click", () => openModal(modalAdd));
+closemodalbtnAdd.addEventListener("click", () => closeModal(modalAdd));
+
+// ------------------------------------------------------------------ LOGICA PARA ELEMENT CARDS ------------------------------------------------------------------------
+
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];
+
+const templateCard = document.querySelector(".elements__template-card").content;
+const imageInputTitle = modalAdd.querySelector(".modal__input-titulo");
+const imageInputLink = modalAdd.querySelector(".modal__input-link");
+const addForm = modalAdd.querySelector(".modal__form-add");
+
+const createCard = (card) => {
+  const cardElement = templateCard.cloneNode(true);
+
+  // Captação de imagem e titulo
+  const cardImage = cardElement.querySelector(".elements__card-image");
+  const cardTitle = cardElement.querySelector(".elements__card-title");
+
+  cardImage.src = card.link;
+  cardImage.alt = card.name;
+  cardTitle.textContent = card.name;
+
+  const likeBtn = cardElement.querySelector(".elements__card-btn");
+  likeBtn.addEventListener("click", () => {
+    likeToggle(likeBtn);
+  });
+
+  const removeBtn = cardElement.querySelector(".elements__btn-remove");
+  removeBtn.addEventListener("click", () => {
+    removeCard(removeBtn.closest(".elements__card"));
+  });
+
+  return cardElement;
+};
+
+for (let i = 0; initialCards.length > i; i++) {
+  const newCard = createCard(initialCards[i]);
+  elements.appendChild(newCard);
+}
+
+addForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const newCardData = {
+    name: imageInputTitle.value,
+    link: imageInputLink.value,
+  };
+
+  const newCard = createCard(newCardData);
+  elements.prepend(newCard);
+  closeModal(modalAdd);
+
+  imageInputTitle.value = "";
+  imageInputLink.value = "";
+});
+
+// -------------------------------------------------------------------------- LOGICA PARA REMOVER CARD -------------------------------------------------------------------
+
+const removeCard = (cardElement) => {
+  cardElement.remove();
+};
+
+// -------------------------------------------------------------------------- LOGICA PARA CURTIDA DE POST -------------------------------------------------------------------
 
 const likeBtns = elements.querySelectorAll(".elements__card-btn");
 
@@ -14,55 +166,3 @@ const likeToggle = (likebtn) => {
     heartImage.alt = "imagem coração sem preenchimento";
   }
 };
-
-likeBtns.forEach((likebtn) => {
-  likebtn.addEventListener("click", () => {
-    likeToggle(likebtn);
-  });
-});
-
-//Lógica para abrir e fechar o popup
-const modal = document.querySelector(".modal");
-
-const openmodalbtn = document.querySelector(".profile__info-btn");
-const closemodalbtn = modal.querySelector(".modal__btn-sair");
-
-const toggleModal = () => {
-  modal.classList.toggle("modal__active");
-};
-
-openmodalbtn.addEventListener("click", toggleModal);
-closemodalbtn.addEventListener("click", toggleModal);
-
-// Lógica para alteração de nome e job
-
-//seleciona o form
-const formElement = document.querySelector(".modal__form");
-
-const handleProfileFormSubmit = (evt) => {
-  evt.preventDefault();
-
-  //seleciona os inputs
-  const nameInput = formElement.querySelector(".modal__input-name");
-  const jobInput = formElement.querySelector(".modal__input-ocupation");
-
-  //seleciona os textos de nome e job do perfil
-  const profileName = document.querySelector(".profile__info-name");
-  const profileJob = document.querySelector(".profile__info-ocupation");
-
-  //altera o valor do nome e job no perfil
-  profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
-
-  //logica para alterar o placeholder para os valores informados
-  nameInput.placeholder = nameInput.value;
-  jobInput.placeholder = jobInput.value;
-
-  //limpa os inputs
-  jobInput.value = "";
-  nameInput.value = "";
-};
-
-formElement.addEventListener("submit", handleProfileFormSubmit);
-// fecha o popup ao dar o submit
-formElement.addEventListener("submit", toggleModal);
