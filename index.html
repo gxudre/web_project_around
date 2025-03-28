@@ -10,8 +10,6 @@
     />
     <meta name="keywords" content="images, portfolio, web developer" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="stylesheet" href="./vendor/fonts.css" />
-    <link rel="stylesheet" href="./vendor/normalize.css" />
     <title>Around</title>
   </head>
   <body>
@@ -49,120 +47,16 @@
             />
           </button>
         </section>
-        <section class="elements">
-          <div class="elements__card">
-            <img
-              src="./images/image-card1.png"
-              alt="primeira imagem do projeto"
-              class="elements__card-image"
-            />
-            <div class="elements__card-container">
-              <h2 class="elements__card-title">Vale de Yosemite</h2>
-              <button class="elements__card-btn">
-                <img
-                  src="./images/like-disabled.png"
-                  alt="vetor de like da postagem fictícia"
-                  class="elements__card-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__card">
-            <img
-              src="./images/image-card2.png"
-              alt="primeira imagem do projeto"
-              class="elements__card-image"
-            />
-            <div class="elements__card-container">
-              <h2 class="elements__card-title">Lago Louise</h2>
-              <button class="elements__card-btn">
-                <img
-                  src="./images/like-disabled.png"
-                  alt="vetor de like da postagem fictícia"
-                  class="elements__card-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__card">
-            <img
-              src="./images/image-card3.png"
-              alt="primeira imagem do projeto"
-              class="elements__card-image"
-            />
-            <div class="elements__card-container">
-              <h2 class="elements__card-title">
-                Montanhas Care eu n sei o resto kkk
-              </h2>
-              <button class="elements__card-btn">
-                <img
-                  src="./images/like-disabled.png"
-                  alt="vetor de like da postagem fictícia"
-                  class="elements__card-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__card">
-            <img
-              src="./images/image-card4.png"
-              alt="primeira imagem do projeto"
-              class="elements__card-image"
-            />
-            <div class="elements__card-container">
-              <h2 class="elements__card-title">Latemar</h2>
-              <button class="elements__card-btn">
-                <img
-                  src="./images/like-disabled.png"
-                  alt="vetor de like da postagem fictícia"
-                  class="elements__card-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__card">
-            <img
-              src="./images/image-card5.png"
-              alt="primeira imagem do projeto"
-              class="elements__card-image"
-            />
-            <div class="elements__card-container">
-              <h2 class="elements__card-title">
-                Parque Nacional de algum lugar
-              </h2>
-              <button class="elements__card-btn">
-                <img
-                  src="./images/like-disabled.png"
-                  alt="vetor de like da postagem fictícia"
-                  class="elements__card-like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__card">
-            <img
-              src="./images/image-card6.png"
-              alt="primeira imagem do projeto"
-              class="elements__card-image"
-            />
-            <div class="elements__card-container">
-              <h2 class="elements__card-title">Lago di Braies</h2>
-              <button class="elements__card-btn">
-                <img
-                  src="./images/like-disabled.png"
-                  alt="vetor de like da postagem fictícia"
-                  class="elements__card-like"
-                />
-              </button>
-            </div>
-          </div>
-        </section>
+        <section class="elements"></section>
       </main>
       <footer class="footer">
-        <p class="footer__copy">Gustavo Xudre © 2024 Around The U.S.</p>
+        <p class="footer__copy">Gustavo Xudre &#169; 2024 Around The U.S.</p>
       </footer>
     </div>
-    <div class="modal">
+
+    <!-- ----------------------------------------------------- MODAL EDIT PROFILE ----------------------------------------------------- -->
+
+    <div class="modal modal__edit-profile" id="modal-edit-profile"">
       <div class="modal__btn-container">
         <button class="modal__btn-sair">
           <img
@@ -191,7 +85,85 @@
         </form>
       </div>
     </div>
-    <script src="./scripts/modal.js"></script>
-    <script src="./scripts/element.js"></script>
+
+    <!-- ---------------------------------------------- MODAL ADD CARD --------------------------------------------------------------- -->
+
+    <div class="modal modal__add-card" id="modal-add-card">
+      <div class="modal__btn-container">
+        <button class="modal__btn-sair" id="modal-close-add-btn">
+          <img
+            src="./images/Close-Icon.png"
+            alt="botao sair"
+            class="modal__btn-image"
+          />
+        </button>
+      </div>
+      <div class="modal__popup">
+        <div class="modal__popup-header">
+          <h2 class="modal__popup-tittle">Novo local</h2>
+        </div>
+        <form class="modal__form modal__form-add">
+          <input
+            type="text"
+            class="modal__input modal__input-name modal__input-titulo"
+            placeholder="Título"
+          />
+          <input
+            type="text"
+            class="modal__input modal__input-ocupation modal__input-link"
+            placeholder="Link da imagem"
+          />
+          <button class="modal__form-btn modal__btn-salvar modal__add-btn">Criar</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- ---------------------------------------------- MODAL IMAGE CARD --------------------------------------------------------------- -->
+
+    <div class="modal modal__image" id="modal__image-popup">
+      
+      <div class="modal__popup modal__popup-img">
+        <button class="modal__image-close" id="modal-close-img-btn">
+          <img
+            src="./images/Close-Icon.png"
+            alt="botao sair"
+            class="modal__btn-image"
+          />
+        </button>
+        <img src="" alt="" class="modal__card-image">
+        <p class="modal__card-description"></p>
+      </div>
+    </div>
+
+    <!-- ------------------------------------------------------ TEMPLATE CARD -------------------------------------------------------- -->
+
+    <template class="elements__template-card">
+      <div class="elements__card">
+        <button class="elements__btn-remove">
+          <img
+            src="./images/trash-vector.png"
+            alt="imagem de lixeira"
+            class="elements__img-trash"
+          />
+        </button>
+        <img
+          src=""
+          alt="primeira imagem do projeto"
+          class="elements__card-image"
+        />
+        <div class="elements__card-container">
+          <h2 class="elements__card-title">Vale de Yosemite</h2>
+          <button class="elements__card-btn">
+            <img
+              src="./images/like-disabled.png"
+              alt="vetor de like da postagem fictícia"
+              class="elements__card-like"
+            />
+          </button>
+        </div>
+      </div>
+    </template>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

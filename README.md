@@ -1,8 +1,8 @@
-# 🌍 Projeto Around - Sprint 7 (TripleTen)
+# 🌍 Projeto Around - Sprint 7 e 8 (TripleTen)
 
 ## 📌 Sobre o Projeto
 
-O **Projeto Around** foi desenvolvido durante a **Sprint 7** da **TripleTen** com o objetivo de aprimorar conhecimentos sobre **JavaScript** e boas práticas de versionamento com **Git**.
+O **Projeto Around** foi desenvolvido durante a **Sprint 7 e 8** da **TripleTen** com o objetivo de aprimorar conhecimentos sobre **JavaScript** e boas práticas de versionamento com **Git**.
 
 A proposta principal do projeto é aprimorar a interação do usuário com a interface, utilizando **JavaScript** para manipulação do **DOM**, tratamento de eventos e implementação de funcionalidades dinâmicas.
 
@@ -32,7 +32,7 @@ A proposta principal do projeto é aprimorar a interação do usuário com a int
 
 ## 🔗 Acesse o Projeto
 
-🔗 [Veja o projeto](sem link por enquanto)
+🔗 [Veja o projeto](https://gxudre.github.io/web_project_around/)
 
 ---
 
