@@ -7,8 +7,33 @@
 }
 
 .elements__card {
+  position: relative;
   background-color: #fff;
   border-radius: 10px;
+}
+
+.elements__btn-remove {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.elements__card-image {
+  width: 282px;
+  height: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.elements__btn-remove:hover {
+  opacity: 0.6;
+}
+
+.elements__img-trash {
+  width: 18px;
 }
 
 .elements__card-container {

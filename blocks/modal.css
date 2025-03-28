@@ -153,3 +153,55 @@
     border-radius: 10px;
   }
 }
+
+/* --------------- modal image css ------------------ */
+
+.modal__popup-img {
+  position: relative;
+  padding: 0;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+}
+
+.modal__image-close {
+  position: absolute;
+  background: transparent;
+  border: none;
+  top: -48px;
+  right: -48px;
+}
+
+.modal__card-image {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+}
+
+.modal__card-description {
+  color: #fff;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .modal__popup-img {
+    position: relative;
+    padding: 0;
+    max-width: 75vw;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+  }
+  .modal__image-close {
+    position: absolute;
+    background: transparent;
+    border: none;
+    top: -45px;
+    right: 0;
+  }
+}
