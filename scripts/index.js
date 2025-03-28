@@ -32,12 +32,13 @@ const handleProfileFormSubmit = (evt) => {
 
 const modalEdit = document.querySelector(".modal__edit-profile"); // Seleciona o modal de edição
 const modalAdd = document.querySelector(".modal__add-card"); // Seleciona o modal de adicionar
+const modalImage = document.querySelector(".modal__image"); // Seleciona o modal de imagem
 
 const Editbtn = document.querySelector(".profile__info-btn");
 const closemodalbtnEdit = modalEdit.querySelector(".modal__btn-sair"); // Seleciona o botão de fechar do modal de edição
 
 const addBtn = document.querySelector(".profile__add-btn");
-const closemodalbtnAdd = modalAdd.querySelector("#modal-close-add-btn"); // Seleciona o botão de fechar do modal de adicionar
+const closeModalbtnAdd = modalAdd.querySelector("#modal-close-add-btn"); // Seleciona o botão de fechar do modal de adicionar
 
 const openModal = (modalElement) => {
   if (modalElement) {
@@ -64,7 +65,7 @@ formElement.addEventListener("submit", (evt) => {
 // ------------------------------------------------------------------- LOGICA ADD BTN -------------------------------------------------------------------------------
 
 addBtn.addEventListener("click", () => openModal(modalAdd));
-closemodalbtnAdd.addEventListener("click", () => closeModal(modalAdd));
+closeModalbtnAdd.addEventListener("click", () => closeModal(modalAdd));
 
 // ------------------------------------------------------------------ LOGICA PARA ELEMENT CARDS ------------------------------------------------------------------------
 
@@ -98,7 +99,6 @@ const initialCards = [
 const templateCard = document.querySelector(".elements__template-card").content;
 const imageInputTitle = modalAdd.querySelector(".modal__input-titulo");
 const imageInputLink = modalAdd.querySelector(".modal__input-link");
-const addForm = modalAdd.querySelector(".modal__form-add");
 
 const createCard = (card) => {
   const cardElement = templateCard.cloneNode(true);
@@ -111,15 +111,53 @@ const createCard = (card) => {
   cardImage.alt = card.name;
   cardTitle.textContent = card.name;
 
+  // Logica para Like de Card
+
+  const likeBtns = elements.querySelectorAll(".elements__card-btn");
+
+  const likeToggle = (likebtn) => {
+    const heartImage = likebtn.querySelector(".elements__card-like");
+
+    if (heartImage.src.includes("like-disabled")) {
+      heartImage.src = "./images/like-active.png";
+      heartImage.alt = "imagem coração prenchido";
+    } else {
+      heartImage.src = "./images/like-disabled.png";
+      heartImage.alt = "imagem coração sem preenchimento";
+    }
+  };
+
   const likeBtn = cardElement.querySelector(".elements__card-btn");
   likeBtn.addEventListener("click", () => {
     likeToggle(likeBtn);
   });
 
+  // Logica para remover card
+
+  const removeCard = (cardElement) => {
+    cardElement.remove();
+  };
+
   const removeBtn = cardElement.querySelector(".elements__btn-remove");
   removeBtn.addEventListener("click", () => {
     removeCard(removeBtn.closest(".elements__card"));
   });
+
+  // logica para modal card image
+
+  const closeModalBtnImg = modalImage.querySelector(".modal__image-close"); // Seleciona o botão de fechar do modal de Imagem
+  closeModalBtnImg.addEventListener("click", () => closeModal(modalImage));
+
+  const modalImageCard = modalImage.querySelector(".modal__card-image");
+  const modalImageDescription = modalImage.querySelector(
+    ".modal__card-description"
+  );
+
+  cardImage.addEventListener("click", () => {
+    openModal(modalImage);
+    modalImageCard.src = cardImage.src;
+    modalImageDescription.textContent = cardTitle.textContent;
+  }); // Seleciona a imagem do card e define imagem e descrição do modal com ouvinte para abrir modal
 
   return cardElement;
 };
@@ -129,7 +167,10 @@ for (let i = 0; initialCards.length > i; i++) {
   elements.appendChild(newCard);
 }
 
+const addForm = modalAdd.querySelector(".modal__form-add");
+
 addForm.addEventListener("submit", (event) => {
+  console.log("entrou");
   event.preventDefault();
 
   const newCardData = {
@@ -144,25 +185,3 @@ addForm.addEventListener("submit", (event) => {
   imageInputTitle.value = "";
   imageInputLink.value = "";
 });
-
-// -------------------------------------------------------------------------- LOGICA PARA REMOVER CARD -------------------------------------------------------------------
-
-const removeCard = (cardElement) => {
-  cardElement.remove();
-};
-
-// -------------------------------------------------------------------------- LOGICA PARA CURTIDA DE POST -------------------------------------------------------------------
-
-const likeBtns = elements.querySelectorAll(".elements__card-btn");
-
-const likeToggle = (likebtn) => {
-  const heartImage = likebtn.querySelector(".elements__card-like");
-
-  if (heartImage.src.includes("like-disabled")) {
-    heartImage.src = "./images/like-active.png";
-    heartImage.alt = "imagem coração prenchido";
-  } else {
-    heartImage.src = "./images/like-disabled.png";
-    heartImage.alt = "imagem coração sem preenchimento";
-  }
-};
