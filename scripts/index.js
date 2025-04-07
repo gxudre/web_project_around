@@ -1,3 +1,5 @@
+import { resetFormValidation } from "./validate.js";
+
 const elements = document.querySelector(".elements");
 
 //seleciona o form
@@ -29,7 +31,7 @@ const handleProfileFormSubmit = (evt) => {
 };
 
 // ---------------------------------------------------------- ABRIR E FECHAR O POPUP -------------------------------------------------------------------------
-
+const modalBackground = document.querySelectorAll(".modal");
 const modalEdit = document.querySelector(".modal__edit-profile"); // Seleciona o modal de edição
 const modalAdd = document.querySelector(".modal__add-card"); // Seleciona o modal de adicionar
 const modalImage = document.querySelector(".modal__image"); // Seleciona o modal de imagem
@@ -40,22 +42,34 @@ const closemodalbtnEdit = modalEdit.querySelector(".modal__btn-sair"); // Seleci
 const addBtn = document.querySelector(".profile__add-btn");
 const closeModalbtnAdd = modalAdd.querySelector("#modal-close-add-btn"); // Seleciona o botão de fechar do modal de adicionar
 
+const templateCard = document.querySelector(".elements__template-card").content;
+const imageInputTitle = modalAdd.querySelector(".modal__input-titulo");
+const imageInputLink = modalAdd.querySelector(".modal__input-link");
+
 const openModal = (modalElement) => {
   if (modalElement) {
     modalElement.classList.add("modal__active");
+
+    //reset da validação
+    resetFormValidation(modalElement);
   }
 };
 
 const closeModal = (modalElement) => {
   if (modalElement) {
     modalElement.classList.remove("modal__active");
+
+    // reset dos valores dos inputs ao fechar os modais
+    jobInput.value = "";
+    nameInput.value = "";
+    imageInputLink.value = "";
+    imageInputTitle.value = "";
   }
 };
 
 // ----------------------------------------------------------------- LOGICA EDIT BTN ---------------------------------------------------------------------------
 
 Editbtn.addEventListener("click", () => openModal(modalEdit));
-closemodalbtnEdit.addEventListener("click", () => closeModal(modalEdit));
 
 formElement.addEventListener("submit", (evt) => {
   handleProfileFormSubmit(evt);
@@ -65,7 +79,27 @@ formElement.addEventListener("submit", (evt) => {
 // ------------------------------------------------------------------- LOGICA ADD BTN -------------------------------------------------------------------------------
 
 addBtn.addEventListener("click", () => openModal(modalAdd));
-closeModalbtnAdd.addEventListener("click", () => closeModal(modalAdd));
+
+// ----------------------------------------------------------------- LOGICA GLOBAL PARA FECHAR PELO BACKGROUND E PELO ESC --------------------------------------------------------
+
+modalBackground.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (
+      event.target.classList.contains("modal") ||
+      event.target.classList.contains("modal__btn-close")
+    ) {
+      closeModal(modal);
+    }
+  });
+});
+
+modalBackground.forEach((modal) => {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal(modal);
+    }
+  });
+});
 
 // ------------------------------------------------------------------ LOGICA PARA ELEMENT CARDS ------------------------------------------------------------------------
 
@@ -95,10 +129,6 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
   },
 ];
-
-const templateCard = document.querySelector(".elements__template-card").content;
-const imageInputTitle = modalAdd.querySelector(".modal__input-titulo");
-const imageInputLink = modalAdd.querySelector(".modal__input-link");
 
 const createCard = (card) => {
   const cardElement = templateCard.cloneNode(true);
@@ -170,7 +200,6 @@ for (let i = 0; initialCards.length > i; i++) {
 const addForm = modalAdd.querySelector(".modal__form-add");
 
 addForm.addEventListener("submit", (event) => {
-  console.log("entrou");
   event.preventDefault();
 
   const newCardData = {

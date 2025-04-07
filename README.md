@@ -1,10 +1,10 @@
-# 🌍 Projeto Around - Sprint 7 e 8 (TripleTen)
+# 🌍 Projeto Around - Sprints 7, 8 e 9 (TripleTen)
 
 ## 📌 Sobre o Projeto
 
-O **Projeto Around** foi desenvolvido durante a **Sprint 7 e 8** da **TripleTen** com o objetivo de aprimorar conhecimentos sobre **JavaScript** e boas práticas de versionamento com **Git**.
+O **Projeto Around** foi desenvolvido durante as **Sprints 7, 8 e 9** da **TripleTen** com o objetivo de aprimorar conhecimentos sobre **JavaScript**, **boas práticas de versionamento com Git** e **validação de formulários**.
 
-A proposta principal do projeto é aprimorar a interação do usuário com a interface, utilizando **JavaScript** para manipulação do **DOM**, tratamento de eventos e implementação de funcionalidades dinâmicas.
+A proposta principal do projeto é melhorar a experiência do usuário com uma interface mais dinâmica e responsiva, utilizando **JavaScript** para manipulação do **DOM**, tratamento de eventos, validação de inputs e implementação de funcionalidades interativas.
 
 ---
 
@@ -19,21 +19,22 @@ A proposta principal do projeto é aprimorar a interação do usuário com a int
 
 ## 🎯 Técnicas Aplicadas
 
-- 📱 **@media queries**
-- 📏 **Flexbox**
-- 🏗️ **CSS Grid**
-- 🌿 **Ramificações no Git (branches) para controle de versão**
+- 📱 **@media queries** para responsividade
+- 📏 **Flexbox** para alinhamento de elementos
+- 🏗️ **CSS Grid** para estruturação de layouts
+- 🌿 **Ramificações no Git (branches)** para controle de versão e organização de funcionalidades
 - 🎭 **Manipulação do DOM com JavaScript**
-- 🎯 **Eventos e interatividade dinâmica**
+- 🎯 **Eventos e interatividade dinâmica com inputs, botões e modais**
 - 🛠️ **Manipulação de classes e estilos via JavaScript**
-- 📝 **captação de formulários e interações do usuário**
+- 📝 **Captação de formulários e interações do usuário**
+- ✅ **Validação de formulários com feedback visual e controle de estado do botão de envio**
 
 ---
 
 ## 🔗 Acesse o Projeto
 
-🔗 [Veja o projeto](https://gxudre.github.io/web_project_around/)
+🔗 [Veja o projeto no GitHub Pages](https://gxudre.github.io/web_project_around/)
 
 ---
 
-🔹 **Feito com ❤️ por [Gustavo Xudré](https://www.linkedin.com/in/gustavo-xudre/).**
+🔹 **Feito com ❤️ por [Gustavo Xudré](https://www.linkedin.com/in/gustavo-xudre/)**

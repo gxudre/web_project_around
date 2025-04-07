@@ -89,11 +89,13 @@
   line-height: 100%;
 }
 
-.modal__input-name {
+.modal__label {
+  max-width: 358px;
+  width: 100%;
   margin-bottom: 30px;
 }
 
-.modal__input-ocupation {
+.modal__label-last {
   margin-bottom: 48px;
 }
 
@@ -204,4 +206,23 @@
     top: -45px;
     right: 0;
   }
+}
+
+/* ------------------------------- VALIDATE CSS ------------------------------- */
+
+.modal__input-error {
+  border-color: red;
+}
+
+.modal__message-error {
+  color: red;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.modal__form-btn_inactive {
+  opacity: 0.2;
+  pointer-events: none;
+  cursor: default;
 }
