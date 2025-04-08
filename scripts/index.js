@@ -1,4 +1,4 @@
-import { resetFormValidation } from "./validate.js";
+import { resetFormValidation, configValidation } from "./validate.js";
 
 const elements = document.querySelector(".elements");
 
@@ -49,9 +49,9 @@ const imageInputLink = modalAdd.querySelector(".modal__input-link");
 const openModal = (modalElement) => {
   if (modalElement) {
     modalElement.classList.add("modal__active");
-
-    //reset da validação
-    resetFormValidation(modalElement);
+    if (modalElement.id != "modal__image-popup") {
+      resetFormValidation(modalElement, configValidation);
+    }
   }
 };
 
