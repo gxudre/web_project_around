@@ -1,10 +1,5 @@
 import { openModal } from "./utils.js";
 
-const elements = document.querySelector(".elements");
-const modalImage = document.querySelector(".modal__image"); // Seleciona o modal de imagem
-const templateCard = document.querySelector(".elements__template-card").content;
-const modalAdd = document.querySelector(".modal__add-card");
-
 // ------------------------------------------------------------------ LOGICA PARA ELEMENT CARDS ------------------------------------------------------------------------
 
 export class Card {
