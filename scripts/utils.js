@@ -1,5 +1,6 @@
-import { renderCard } from "./index.js";
+import { Card } from "./card.js";
 
+const elementsContainer = document.querySelector(".elements");
 const modalAdd = document.querySelector(".modal__add-card");
 
 const imageInputTitle = modalAdd.querySelector(".modal__input-titulo");
@@ -13,6 +14,8 @@ const profileName = document.querySelector(".profile__info-name");
 const profileJob = document.querySelector(".profile__info-ocupation");
 const inputTitle = modalAdd.querySelector(".modal__input-titulo");
 const inputLink = modalAdd.querySelector(".modal__input-link");
+const templateSelector = ".elements__template-card";
+const modalImage = document.querySelector(".modal__image");
 
 // -----------------------------------------------------------OPEN E CLOSE MODAL -----------------------------------------------------------------------------
 
@@ -54,7 +57,16 @@ const handleProfileFormSubmit = (evt) => {
   nameInput.value = "";
 };
 
-//-------------------------
+//-------------------------------------------------------- Render Card -----------------------------------------------------------------------------
+
+// Função para renderizar cards
+const renderCard = (data) => {
+  const card = new Card(data, templateSelector, modalImage);
+  const cardElement = card.generateCard();
+  elementsContainer.prepend(cardElement);
+};
+
+//--------------------------------------------------------- Add Submit -----------------------------------------------------------------------------
 
 const handleAddFormSubmit = (e, formValidator, formElement) => {
   e.preventDefault();
@@ -70,4 +82,10 @@ const handleAddFormSubmit = (e, formValidator, formElement) => {
   formValidator.resetValidation();
 };
 
-export { openModal, closeModal, handleProfileFormSubmit, handleAddFormSubmit };
+export {
+  openModal,
+  closeModal,
+  handleProfileFormSubmit,
+  handleAddFormSubmit,
+  renderCard,
+};

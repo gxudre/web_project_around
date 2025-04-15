@@ -57,21 +57,21 @@
     <!-- ----------------------------------------------------- MODAL EDIT PROFILE ----------------------------------------------------- -->
 
     <div class="modal modal__edit-profile" id="modal-edit-profile"">
-      <div class="modal__btn-container">
-        <button class="modal__btn-sair modal__btn-close">
-          <img
-            src="./images/Close-Icon.png"
-            alt="botao sair"
-            class="modal__btn-image modal__btn-close"
-          />
-        </button>
+    <div class="modal__btn-container">
+      <button class="modal__btn-sair modal__btn-close">
+        <img
+          src="./images/Close-Icon.png"
+          alt="botao sair"
+          class="modal__btn-image modal__btn-close"
+        />
+      </button>
+    </div>
+    <div class="modal__popup">
+      <div class="modal__popup-header">
+        <h2 class="modal__popup-tittle">Editar perfil</h2>
       </div>
-      <div class="modal__popup">
-        <div class="modal__popup-header">
-          <h2 class="modal__popup-tittle">Editar perfil</h2>
-        </div>
-        <form class="modal__form modal__form-edit">
-          <label  class="modal__label">
+      <form class="modal__form modal__form-edit">
+        <label class="modal__label">
           <input
             type="text"
             class="modal__input modal__input-name"
@@ -81,7 +81,10 @@
             maxlength="40"
             required
           />
-          <span class="modal__message-error" id="modal__input-name-error"></span>
+          <span
+            class="modal__message-error"
+            id="modal__input-name-error"
+          ></span>
         </label>
         <label class="modal__label modal__label-last">
           <input
@@ -93,18 +96,23 @@
             maxlength="200"
             required
           />
-          <span class="modal__message-error" id="modal__input-ocupation-error"></span>
+          <span
+            class="modal__message-error"
+            id="modal__input-ocupation-error"
+          ></span>
         </label>
-          <button class="modal__form-btn modal__btn-salvar">Salvar</button>
-        </form>
-      </div>
+        <button class="modal__form-btn modal__btn-salvar">Salvar</button>
+      </form>
     </div>
 
     <!-- ---------------------------------------------- MODAL ADD CARD --------------------------------------------------------------- -->
 
     <div class="modal modal__add-card" id="modal-add-card">
       <div class="modal__btn-container">
-        <button class="modal__btn-sair modal__btn-close" id="modal-close-add-btn">
+        <button
+          class="modal__btn-sair modal__btn-close"
+          id="modal-close-add-btn"
+        >
           <img
             src="./images/Close-Icon.png"
             alt="botao sair"
@@ -117,47 +125,56 @@
           <h2 class="modal__popup-tittle">Novo local</h2>
         </div>
         <form class="modal__form modal__form-add">
-          <label  class="modal__label">
-          <input
-            type="text"
-            class="modal__input modal__input-name modal__input-titulo"
-            placeholder="Título"
-            id="modal__input-titulo"
-            minlength="2"
-            maxlength="30"
-            required
-          />
-          <span class="modal__message-error" id="modal__input-titulo-error"></span>
-        </label>
-        <label class="modal__label modal__label-last">
-          <input
-            type="url"
-            class="modal__input modal__input-ocupation modal__input-link"
-            placeholder="Link da imagem"
-            id="modal__input-link"
-            required
-          />
-          <span class="modal__message-error" id="modal__input-link-error"></span>
-        </label>
-          <button class="modal__form-btn modal__btn-salvar modal__add-btn">Criar</button>
+          <label class="modal__label">
+            <input
+              type="text"
+              class="modal__input modal__input-name modal__input-titulo"
+              placeholder="Título"
+              id="modal__input-titulo"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span
+              class="modal__message-error"
+              id="modal__input-titulo-error"
+            ></span>
+          </label>
+          <label class="modal__label modal__label-last">
+            <input
+              type="url"
+              class="modal__input modal__input-ocupation modal__input-link"
+              placeholder="Link da imagem"
+              id="modal__input-link"
+              required
+            />
+            <span
+              class="modal__message-error"
+              id="modal__input-link-error"
+            ></span>
+          </label>
+          <button class="modal__form-btn modal__btn-salvar modal__add-btn">
+            Criar
+          </button>
         </form>
       </div>
     </div>
 
-
     <!-- ---------------------------------------------- MODAL IMAGE CARD --------------------------------------------------------------- -->
 
     <div class="modal modal__image" id="modal__image-popup">
-      
       <div class="modal__popup modal__popup-img">
-        <button class="modal__image-close modal__btn-close" id="modal-close-img-btn">
+        <button
+          class="modal__image-close modal__btn-close"
+          id="modal-close-img-btn"
+        >
           <img
             src="./images/Close-Icon.png"
             alt="botao sair"
             class="modal__btn-image modal__btn-close"
           />
         </button>
-        <img src="" alt="" class="modal__card-image">
+        <img src="#" alt="#" class="modal__card-image" />
         <p class="modal__card-description"></p>
       </div>
     </div>

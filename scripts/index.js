@@ -1,20 +1,19 @@
-import { Card } from "./card.js";
 import { FormValidator } from "./formValidator.js";
 import {
   openModal,
   closeModal,
   handleProfileFormSubmit,
   handleAddFormSubmit,
+  renderCard,
 } from "./utils.js";
 
-const elementsContainer = document.querySelector(".elements");
 const modalAdd = document.querySelector(".modal__add-card");
 const modalImage = document.querySelector(".modal__image");
 const formAdd = modalAdd.querySelector(".modal__form-add");
 const modalEdit = document.querySelector(".modal__edit-profile");
 const formEdit = modalEdit.querySelector(".modal__form-edit");
 const addBtn = document.querySelector(".profile__add-btn");
-const templateSelector = ".elements__template-card";
+
 const modalBackground = document.querySelectorAll(".modal");
 const Editbtn = document.querySelector(".profile__info-btn");
 
@@ -82,13 +81,6 @@ modalBackground.forEach((modal) => {
   });
 });
 
-// Função para renderizar cards
-export const renderCard = (data) => {
-  const card = new Card(data, templateSelector, modalImage);
-  const cardElement = card.generateCard();
-  elementsContainer.prepend(cardElement);
-};
-
 // Renderiza os iniciais
 initialCards.forEach(renderCard);
 
@@ -110,5 +102,5 @@ const closeModalBtnImg = modalImage.querySelector(".modal__image-close"); // Sel
 closeModalBtnImg.addEventListener("click", () => closeModal(modalImage));
 
 formAdd.addEventListener("submit", (e) => {
-  handleAddFormSubmit(e, formAdd, addFormValidator);
+  handleAddFormSubmit(e, addFormValidator, formAdd);
 });
